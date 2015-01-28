@@ -50,7 +50,7 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'codeigniter';
-$db['default']['password'] = 'codeigniter';
+$db['default']['password'] = 'vZk/Cd0j/ZoCA';
 $db['default']['database'] = 'codeigniter';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
