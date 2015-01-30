@@ -13,7 +13,10 @@ class Inici extends CI_Controller {
 
 		/*Carreguem la llibreria grocery CRUD*/
 		$this->load->library('grocery_CRUD');
-	}
+
+		$this->load->helper('form');
+
+		
 
 	/**
 	 * Index Page for this controller.
@@ -69,9 +72,20 @@ class Inici extends CI_Controller {
 	
 	/* Funció Usuaris */
 	public function usuaris(){
+		
+	
 		$this->load->view('head');
 		$this->load->view('form_usuaris');
 		
+		
+		/*$mail = $this->input->post('mail');
+		$nom = $this->input->post('nom');
+		$cognom = $this->input->post('cognom');
+		$usuaris = $this->input->post('usuari');
+		$password = $this->input->post('password');
+		//$this->load->model('receptes_model');
+		
+		$this->receptes_model->inserta_usuari($mail, $nom, $cognom, $usuari,$password);*/
 	}
 
 	

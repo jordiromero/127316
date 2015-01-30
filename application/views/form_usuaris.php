@@ -10,23 +10,23 @@
 		<form>
 			<div class="form-group">
 				<label for="inputEmail">Correu Electronic:</label>
-				<input type="email" class="form-control" id="inputEmail" placeholder="Inserta correu electronic">
+				<input type="email" name="mail" class="form-control" id="inputEmail" placeholder="Inserta correu electronic">
 			</div><!-- fi form-group-->
 			<div class="form-group">
 				<label for="inputNom">Nom:</label>
-				<input type="text" class="form-control" id="inputNom" placeholder="Nom">
+				<input type="text" name="nom" class="form-control" id="inputNom" placeholder="Nom">
 			</div><!-- fi form-group-->
 			<div class="form-group">
 				<label for="inputCognoms">Cognoms:</label>
-				<input type="text" class="form-control" id="inputCognoms" placeholder="Cognoms">
+				<input type="text" name="cognom" class="form-control" id="inputCognoms" placeholder="Cognoms">
 			</div><!-- fi form-group-->
 			<div class="form-group">
 				<label for="inputUserName">Nom Usuari:</label>
-				<input type="text" class="form-control" id="inputUserName" placeholder="Nom Usuari">
+				<input type="text" name="usuari" class="form-control" id="inputUserName" placeholder="Nom Usuari">
 			</div><!-- fi form-group-->
 			<div class="form-group">
 				<label for="inputPassword">Contrasenya:</label>
-				<input type="password" class="form-control" id="inputPassword" placeholder="Contrasenya">
+				<input type="password" name="password"  class="form-control" id="inputPassword" placeholder="Contrasenya">
 			</div><!-- fi form-group-->
 			<div class="form-group">
 				<label for="inputRePassword">Reescriu la contrasenya:</label>
