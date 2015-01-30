@@ -6,17 +6,18 @@ class Inici extends CI_Controller {
 		
 		parent::__construct();
 
-		$this->load->helper('url');
-
 		/*Carreguem el fitxer de configuració de la base de dades*/
 		$this->load->database();
 
 		/*Carreguem la llibreria grocery CRUD*/
 		$this->load->library('grocery_CRUD');
 
+		$this->load->helper('url');
+
 		$this->load->helper('form');
 
-		
+		$this->load->model('receptes_model');
+	}
 
 	/**
 	 * Index Page for this controller.
@@ -33,6 +34,7 @@ class Inici extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
+
 	public function index(){
 
 		$this->load->view('head');
@@ -73,19 +75,26 @@ class Inici extends CI_Controller {
 	/* Funció Usuaris */
 	public function usuaris(){
 		
-	
-		$this->load->view('head');
-		$this->load->view('form_usuaris');
-		
-		
-		/*$mail = $this->input->post('mail');
+		$this->load->helper('form');
+		$mail = $this->input->post('mail');
 		$nom = $this->input->post('nom');
 		$cognom = $this->input->post('cognom');
-		$usuaris = $this->input->post('usuari');
+		$usuari = $this->input->post('usuari');
 		$password = $this->input->post('password');
-		//$this->load->model('receptes_model');
+
+		if(!empty($_POST)){
+
+			$user = $this->receptes_model->inserta_usuari($mail, $nom, $cognom, $usuari,md5($password));
+			if($user){
+				redirect('inici/index');
+			}else{
+				$data['error'] = TRUE;
+			}
+		}
 		
-		$this->receptes_model->inserta_usuari($mail, $nom, $cognom, $usuari,$password);*/
+
+		$this->load->view('head');
+		$this->load->view('form_usuaris');
 	}
 
 	

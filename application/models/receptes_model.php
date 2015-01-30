@@ -1,15 +1,14 @@
-<?php
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /*Model Receptes*/
 
-class Receptes_Model extends CI_Model {
+class Receptes_model extends CI_Model {
 
-	function __construct(){
+	public function __construct(){
 		
 		parent::__construct();
 
-		/*Carreguem el fitxer de configuració de la base de dades*/
-		$this->load->database();
+		
 
 		
 	}
@@ -17,12 +16,12 @@ class Receptes_Model extends CI_Model {
 	public function inserta_usuari($mail, $nom, $cognom, $usuari,$password){
 
 		$data = array(
-			'mail' => $mail
-			'nom' => $nom
-			'cognom' => $cognom
-			'usuari' => $usuari
-			'password' => $password
-			);
+			'email' => $mail,
+			'nom' => $nom,
+			'cognom' => $cognom,
+			'username' => $usuari,
+			'password' => $password);
+
 		return $this->db->insert('usuaris', $data);
 
 	}

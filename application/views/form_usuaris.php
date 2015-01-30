@@ -7,7 +7,7 @@
 	</style>
 <body>
 	<div class="container">
-		<form>
+		<form method="post">
 			<div class="form-group">
 				<label for="inputEmail">Correu Electronic:</label>
 				<input type="email" name="mail" class="form-control" id="inputEmail" placeholder="Inserta correu electronic">
