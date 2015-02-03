@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Inici extends CI_Controller {
+class Main extends CI_Controller {
 
 	function __construct(){
 		
@@ -86,7 +86,7 @@ class Inici extends CI_Controller {
 
 			$user = $this->receptes_model->inserta_usuari($mail, $nom, $cognom, $usuari,md5($password));
 			if($user){
-				redirect('inici/index');
+				redirect('main/index');
 			}else{
 				$data['error'] = TRUE;
 			}

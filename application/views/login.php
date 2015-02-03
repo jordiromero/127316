@@ -30,7 +30,7 @@
 							<button class="btn btn-lg btn-primary btn-block" type="submit">Inicia Sessi&oacute;</button>
 						</div><!--fi form-group-->
 						<div class="form-group text-right">
-							<a href="<?php echo base_url();?>index.php/inici/usuaris">Registrat</a>
+							<a href="<?php echo base_url();?>index.php/main/usuaris">Registrat</a>
 
 						</div><!--fi form-group-->
 					</div><!--fi col-md-->
