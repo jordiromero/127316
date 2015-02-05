@@ -7,10 +7,6 @@ class Receptes_model extends CI_Model {
 	public function __construct(){
 		
 		parent::__construct();
-
-		
-
-		
 	}
 
 	public function inserta_usuari($mail, $nom, $cognom, $usuari,$password){
@@ -24,6 +20,10 @@ class Receptes_model extends CI_Model {
 
 		return $this->db->insert('usuaris', $data);
 
+	}
+
+	public function getUsuari($username){
+		
 	}
 	
 }

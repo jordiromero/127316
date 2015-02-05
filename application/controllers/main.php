@@ -2,6 +2,8 @@
 
 class Main extends CI_Controller {
 
+	private $usuaris;
+
 	function __construct(){
 		
 		parent::__construct();
@@ -43,8 +45,49 @@ class Main extends CI_Controller {
 
 	public function login(){
 
-		$this->load->view('head');
-		$this->load->view('login');
+		if(isset($_POST['usuari']) && isset($_POST['password'])){
+			$username = $_POST['usuari'];
+			$password = $_POST['password'];
+
+			if($this->existUser($username) == true && $this->comprobarClau($username,$password) == true){
+				$usuari = $this->receptes_model    ->getUsuari($username);
+			}else{
+
+				redirect('main/index');
+
+			}
+			else{
+				$this->load->view('head');
+				$this->load->view('login');
+			}
+
+		}
+
+		public function existUser($username){
+
+			foreach ($this->usuaris as $usuari) {
+
+				if($usuari['usuari'] == $username){
+					return true;
+				}
+			}
+			return false;
+
+		}
+
+		public function comprobarClau($username, $password){
+
+			foreach ($this->usuaris as $usuari) {
+				if($usuari['usuari'] == $username && md5($usuari['password']) == $password){
+					return true;
+				}
+			}
+			return false;
+		}
+
+
+
+		
 	}
 
 	/* Sortida de la pagina recepetes */
